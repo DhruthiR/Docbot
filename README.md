@@ -116,6 +116,20 @@ This project demonstrates practical skills in **Generative AI, RAG pipelines, do
 
 ---
 
+## 🧠 Core Logic (Important for Recruiters)
+
+The core of DocBot is the RAG pipeline:
+
+* PDF text is extracted and divided into smaller chunks
+* Each chunk is converted into a vector embedding
+* Embeddings are indexed using FAISS
+* A user's question is converted into an embedding
+* Similarity search retrieves the most relevant document chunks
+* Retrieved chunks are passed as context to the LLM
+* The LLM generates an answer using the retrieved context
+
+This architecture helps separate **information retrieval** from **answer generation** and allows the system to work with documents that were not part of the LLM's original training data.
+
 ## 🧠 Why RAG?
 
 A traditional LLM generates responses primarily from its pretrained knowledge. This can sometimes result in answers that are inaccurate or unrelated to the user's document.
